@@ -1,6 +1,3 @@
-/**
- * Feature item data structure
- */
 export interface FeatureItem {
   icon: "check" | "x"
   text: string
@@ -8,9 +5,6 @@ export interface FeatureItem {
   linkUrl?: string
 }
 
-/**
- * WhatsApp provider data structure
- */
 export interface WhatsAppProvider {
   id: string
   name: string
@@ -25,6 +19,6 @@ export interface WhatsAppProvider {
   title: string
   subtitle: string
   features: FeatureItem[]
-  primaryActionHref?: string // Added for navigation
-  secondaryActionHref?: string // Added for navigation
+  primaryActionHref?: string
+  secondaryActionHref?: string
 }

@@ -1,9 +1,5 @@
 import type { Connection } from "../types/connection"
 
-/**
- * Sample connection data
- * In a real application, this would come from an API
- */
 export const connections: Connection[] = [
   {
     id: "conn-1",

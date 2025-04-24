@@ -3,11 +3,6 @@
 import { ActionButton } from "../action-button"
 import type { HelpSectionProps } from "../../types/connection"
 
-/**
- * HelpSection component
- *
- * Displays help information and support options for users
- */
 export function HelpSection({
   title,
   description,

@@ -6,18 +6,12 @@ interface FeatureItemProps {
   color: string
 }
 
-/**
- * FeatureItem component displays a feature with an icon and text
- * Can optionally render as a link if isLink is true
- */
 export function FeatureItem({ item, color }: FeatureItemProps) {
   const { icon, text, isLink, linkUrl } = item
 
-  // Render the appropriate icon
   const IconComponent = icon === "check" ? Check : X
   const iconColor = icon === "check" ? color : "#5e5e5e"
 
-  // Render content as link or plain text
   const content =
     isLink && linkUrl ? (
       <a

@@ -2,11 +2,6 @@ interface BackgroundPatternProps {
   imagePath: string
 }
 
-/**
- * BackgroundPattern component
- *
- * Displays a full-screen background pattern image
- */
 export function BackgroundPattern({ imagePath }: BackgroundPatternProps) {
   return (
     <div

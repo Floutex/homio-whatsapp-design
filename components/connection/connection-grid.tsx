@@ -7,11 +7,6 @@ interface ConnectionGridProps {
   onDelete?: (id: string) => void
 }
 
-/**
- * ConnectionGrid component
- *
- * Displays a responsive grid of connection cards
- */
 export function ConnectionGrid({ connections, onAction, onDelete }: ConnectionGridProps) {
   return (
     <div className="grid md:grid-cols-3 gap-6 mb-12">

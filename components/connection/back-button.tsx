@@ -2,11 +2,6 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import type { BackButtonProps } from "../../types/connection"
 
-/**
- * BackButton component
- *
- * A navigation button that returns to the previous page
- */
 export function BackButton({ href, color, ariaLabel }: BackButtonProps) {
   return (
     <Link

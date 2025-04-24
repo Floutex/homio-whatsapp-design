@@ -16,14 +16,9 @@ interface ActionButtonProps {
   size?: "sm" | "md" | "lg"
   fullWidth?: boolean
   className?: string
-  animationDelay?: number // Optional delay for staggered animations
+  animationDelay?: number
 }
 
-/**
- * ActionButton component for primary and secondary actions
- * Supports both onClick handlers and navigation via href
- * Enhanced with modern design, animations, and accessibility features
- */
 export function ActionButton({
   primary = false,
   color,
@@ -44,7 +39,6 @@ export function ActionButton({
   const [isLoading, setIsLoading] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  // Animation entrance effect
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true)
@@ -53,11 +47,9 @@ export function ActionButton({
     return () => clearTimeout(timer)
   }, [animationDelay])
 
-  // Handle button click - either navigate or call onClick handler
   const handleClick = () => {
     if (disabled || isLoading) return
 
-    // Show loading state briefly for visual feedback
     setIsLoading(true)
 
     setTimeout(() => {
@@ -67,23 +59,19 @@ export function ActionButton({
         onClick()
       }
       setIsLoading(false)
-    }, 300) // Brief loading animation for feedback
+    }, 300)
   }
 
-  // Determine icon component based on the icon prop
   const IconComponent = icon === "arrow" ? ArrowRight : icon === "info" ? Info : null
 
-  // Determine size classes
   const sizeClasses = {
     sm: "py-2 px-4 text-sm",
     md: "py-3 px-6 text-base",
     lg: "py-4 px-8 text-lg",
   }[size]
 
-  // Determine width class
   const widthClass = fullWidth ? "w-full" : "w-auto"
 
-  // Base button styles
   const baseStyles = {
     borderRadius: "0.75rem",
     fontWeight: "600",
@@ -94,7 +82,6 @@ export function ActionButton({
     opacity: isVisible ? 1 : 0,
   } as React.CSSProperties
 
-  // Enhanced hover effects for primary button
   const primaryStyles = {
     backgroundColor: disabled ? `${color}80` : color,
     color: "white",
@@ -114,7 +101,6 @@ export function ActionButton({
           : "none",
   }
 
-  // Enhanced hover effects for secondary button
   const secondaryStyles = {
     backgroundColor: isHovered ? `${color}15` : "white",
     color: disabled ? `${color}80` : color,
@@ -135,7 +121,6 @@ export function ActionButton({
           : "none",
   }
 
-  // Combine styles based on primary/secondary
   const buttonStyles = {
     ...baseStyles,
     ...(primary ? primaryStyles : secondaryStyles),
@@ -160,7 +145,6 @@ export function ActionButton({
       aria-disabled={disabled || isLoading}
       role="button"
     >
-      {/* Ripple effect overlay */}
       <span
         className="absolute inset-0 bg-white opacity-0 transition-opacity duration-300"
         style={{
@@ -170,7 +154,6 @@ export function ActionButton({
         }}
       />
 
-      {/* Button content with icon */}
       <span className="relative flex items-center justify-center gap-2">
         {isLoading ? (
           <>

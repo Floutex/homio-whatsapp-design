@@ -3,7 +3,6 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Open_Sans } from "next/font/google"
 
-// Initialize the Open Sans font with all required weights
 const openSans = Open_Sans({
   subsets: ["latin"],
   display: "swap",

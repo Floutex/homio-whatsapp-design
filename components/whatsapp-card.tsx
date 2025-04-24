@@ -11,13 +11,9 @@ interface WhatsAppCardProps {
   animationDelay?: number
 }
 
-/**
- * WhatsAppCard component displays a card with provider information and features
- */
 export function WhatsAppCard({ provider, animationDelay = 0 }: WhatsAppCardProps) {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Animation entrance effect
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true)
@@ -57,7 +53,6 @@ export function WhatsAppCard({ provider, animationDelay = 0 }: WhatsAppCardProps
       }}
     >
       <div className="p-6 relative z-10">
-        {/* Header */}
         <div className="flex items-center gap-3 mb-3">
           <div
             style={{
@@ -85,7 +80,6 @@ export function WhatsAppCard({ provider, animationDelay = 0 }: WhatsAppCardProps
           </h2>
         </div>
 
-        {/* Title and subtitle */}
         <div className="mb-5">
           <h3
             className="text-2xl font-bold text-[#191919] mb-0 tracking-tighter"
@@ -113,7 +107,6 @@ export function WhatsAppCard({ provider, animationDelay = 0 }: WhatsAppCardProps
           </p>
         </div>
 
-        {/* Features list */}
         <div className="space-y-1 mb-6">
           {features.map((feature, index) => (
             <div
@@ -130,7 +123,6 @@ export function WhatsAppCard({ provider, animationDelay = 0 }: WhatsAppCardProps
           ))}
         </div>
 
-        {/* Action buttons */}
         <div className="flex flex-col sm:flex-row gap-3">
           <ActionButton
             primary

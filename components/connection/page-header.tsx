@@ -1,13 +1,7 @@
 import Image from "next/image"
 import type { PageHeaderProps } from "../../types/connection"
 
-/**
- * PageHeader component
- *
- * Displays the main heading and subtitle for a page with an optional logo
- */
 export function PageHeader({ title, subtitle, logoSrc, logoAlt, titleColor }: PageHeaderProps) {
-  // Split title into parts (assuming format "Word1 Word2")
   const titleParts = title.split(" ")
   const firstWord = titleParts[0]
   const restOfTitle = titleParts.slice(1).join(" ")

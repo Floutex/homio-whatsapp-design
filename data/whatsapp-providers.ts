@@ -1,9 +1,5 @@
 import type { WhatsAppProvider } from "../types"
 
-/**
- * WhatsApp provider data
- * Contains all information needed to render the comparison cards
- */
 export const whatsappProviders: WhatsAppProvider[] = [
   {
     id: "homio",
@@ -18,8 +14,8 @@ export const whatsappProviders: WhatsAppProvider[] = [
     borderColor: "#e0d8f3",
     title: "De graça, para sempre.",
     subtitle: "Envie e receba mensagens, o quanto quiser, de graça.",
-    primaryActionHref: "/whatsapp-connect", // Navigation path for "Comece a usar" button
-    secondaryActionHref: "#", // Non-functional link for "Saiba mais" button
+    primaryActionHref: "/whatsapp-connect",
+    secondaryActionHref: "#",
     features: [
       {
         icon: "check",
@@ -48,8 +44,8 @@ export const whatsappProviders: WhatsAppProvider[] = [
     borderColor: "#d8e8e6",
     title: "Verificado pela Meta.",
     subtitle: "Envie e receba mensagens pela API Oficial do WhatsApp.",
-    primaryActionHref: "/whatsapp-meta-connect", // Navigation path for "Comece a usar" button
-    secondaryActionHref: "#", // Non-functional link for "Saiba mais" button
+    primaryActionHref: "/whatsapp-meta-connect",
+    secondaryActionHref: "#",
     features: [
       {
         icon: "x",

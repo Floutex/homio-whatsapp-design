@@ -4,30 +4,21 @@ import { CheckCircle, Phone, Plus, Trash2, XCircle } from "lucide-react"
 import { ActionButton } from "../action-button"
 import type { ConnectionCardProps } from "../../types/connection"
 
-/**
- * ConnectionCard component
- *
- * Displays information about a WhatsApp connection with appropriate status indicators
- * and action buttons based on the connection state
- */
 export function ConnectionCard({ connection, onAction, onDelete }: ConnectionCardProps) {
   const { id, status, phoneNumber, userName, statusColor, statusLabel, actionLabel, actionPrimary } = connection
 
-  // Determine the status icon based on connection status
   const StatusIcon = {
     connected: CheckCircle,
     disconnected: XCircle,
     free: Plus,
   }[status]
 
-  // Handle action button click
   const handleAction = () => {
     if (onAction) {
       onAction(id)
     }
   }
 
-  // Handle delete button click
   const handleDelete = () => {
     if (onDelete) {
       onDelete(id)
@@ -36,14 +27,12 @@ export function ConnectionCard({ connection, onAction, onDelete }: ConnectionCar
 
   return (
     <div className="rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md h-[200px] flex flex-col">
-      {/* Status indicator bar */}
       <div className="h-2" style={{ backgroundColor: statusColor }}></div>
 
       <div
         className="p-5 bg-white border-x border-b rounded-b-xl flex-1 flex flex-col"
         style={{ borderColor: "#e0e0e0" }}
       >
-        {/* Status header */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <StatusIcon size={18} className="text-[#00a884]" style={{ color: statusColor }} />
@@ -52,7 +41,6 @@ export function ConnectionCard({ connection, onAction, onDelete }: ConnectionCar
             </span>
           </div>
 
-          {/* Only show delete button for connected or disconnected statuses */}
           {status !== "free" && (
             <button
               className="text-gray-400 hover:text-gray-600 transition-colors p-1.5 rounded-full hover:bg-gray-100"
@@ -64,7 +52,6 @@ export function ConnectionCard({ connection, onAction, onDelete }: ConnectionCar
           )}
         </div>
 
-        {/* Connection info */}
         <div className="mb-4 flex-1">
           <div className="flex items-center gap-3">
             <div className="bg-opacity-10 p-2 rounded-full" style={{ backgroundColor: `${statusColor}15` }}>
@@ -77,7 +64,6 @@ export function ConnectionCard({ connection, onAction, onDelete }: ConnectionCar
           </div>
         </div>
 
-        {/* Action button */}
         <ActionButton primary={actionPrimary} color={statusColor} size="sm" icon="arrow" onClick={handleAction}>
           {actionLabel}
         </ActionButton>

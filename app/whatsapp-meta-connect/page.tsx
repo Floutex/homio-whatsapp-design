@@ -4,7 +4,6 @@ import { ArrowLeft } from "lucide-react"
 export default function WhatsAppMetaConnectPage() {
   return (
     <div className="w-full min-h-screen py-12 px-4 relative">
-      {/* Background pattern */}
       <div
         className="fixed inset-0 pointer-events-none z-[-1]"
         style={{
@@ -18,7 +17,6 @@ export default function WhatsAppMetaConnectPage() {
       />
 
       <div className="max-w-4xl w-full mx-auto">
-        {/* Back button */}
         <Link href="/" className="inline-flex items-center mb-8 hover:underline" style={{ color: "#128c7e" }}>
           <ArrowLeft className="h-4 w-4 mr-2" />
           Voltar para comparação
